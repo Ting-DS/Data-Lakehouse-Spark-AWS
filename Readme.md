@@ -98,4 +98,18 @@ To address this issue for the Data Science team:
   <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/image/Athena.png" width="100%">
 </div>
 
+<div align="center">
+  <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/AthenaSQLQuery/machine_learning_curated.png" width="100%">
+</div>
+
+Reference:
+
+ - [Data Engineering with AWS](https://www.amazon.com/Data-Engineering-AWS-Gareth-Eagar/dp/1800560419)
+ - [Data Lakehouse]()https://aws.amazon.com/blogs/architecture/use-a-reusable-etl-framework-in-your-aws-lake-house-architecture/
+ - [AWS Glue Studio](https://docs.aws.amazon.com/glue/latest/ug/what-is-glue-studio.html)
+ - [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+ - [AWS Athena](https://aws.amazon.com/athena/)
+ - [PySpark](https://spark.apache.org/docs/latest/api/python/index.html)
+ - [Glue Table](https://docs.aws.amazon.com/glue/latest/dg/tables-described.html) 
+
 
