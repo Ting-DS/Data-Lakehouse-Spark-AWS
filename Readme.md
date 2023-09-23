@@ -1,6 +1,6 @@
 # STEDI Human Balance Analytics- Data Lakehouse solution in AWS
 
-### Using Spark, Python, [AWS Glue Studio](https://docs.aws.amazon.com/glue/latest/ug/what-is-glue-studio.html), [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) and [AWS Athena](https://aws.amazon.com/athena/), create Python scripts using [PySpark](https://spark.apache.org/docs/latest/api/python/index.html) and query [Glue Table](https://docs.aws.amazon.com/glue/latest/dg/tables-described.html) using SQL to build a lakehouse solution with landing-trusted-curated data lake zones in AWS that satisfies these requirements from the STEDI data scientists.
+#### Using Spark, Python, [AWS Glue Studio](https://docs.aws.amazon.com/glue/latest/ug/what-is-glue-studio.html), [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) and [AWS Athena](https://aws.amazon.com/athena/), create Python scripts using [PySpark](https://spark.apache.org/docs/latest/api/python/index.html) and query [Glue Table](https://docs.aws.amazon.com/glue/latest/dg/tables-described.html) using SQL to build a lakehouse solution with landing-trusted-curated data lake zones in AWS that satisfies these requirements from the STEDI data scientists.
 
 <div align="center">
   <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/image/AWS_draw.png" width="100%">
