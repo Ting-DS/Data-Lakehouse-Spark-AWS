@@ -102,7 +102,7 @@ To address this issue for the Data Science team:
   <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/AthenaSQLQuery/machine_learning_curated.png" width="100%">
 </div>
 
-Reference:
+# Reference:
 
  - [Data Engineering with AWS](https://www.amazon.com/Data-Engineering-AWS-Gareth-Eagar/dp/1800560419)
  - [Data Lakehouse]()https://aws.amazon.com/blogs/architecture/use-a-reusable-etl-framework-in-your-aws-lake-house-architecture/
