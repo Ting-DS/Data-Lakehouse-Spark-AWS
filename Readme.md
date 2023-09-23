@@ -2,6 +2,10 @@
 
 Using Spark, Python, AWS Glue, AWS S3 and AWS Athena, create Python scripts using PySpark and query Glue Table using SQL to build a lakehouse solution with landing-trusted-curated data lake zones in AWS that satisfies these requirements from the STEDI data scientists.
 
+<div align="center">
+  <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/image/AWS_draw.png" width="80%">
+</div>
+
 # Introduction
 The STEDI Team has been hard at work developing a hardware STEDI Step Trainer that:
 
