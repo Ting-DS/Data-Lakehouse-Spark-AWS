@@ -1,4 +1,13 @@
 # STEDI Human Balance Analytics- Data Lakehouse solution in AWS
+# Introduction
+The STEDI Team has been hard at work developing a hardware STEDI Step Trainer that:
+
+ - trains the user to do a STEDI balance exercise;
+ - has sensors on the device that collect data to train a machine-learning algorithm to detect steps;
+ - has a companion mobile app that collects customer data and interacts with the device sensors.
+   
+As a data engineer on the STEDI Step Trainer team, I'll extract the data produced by the STEDI Step Trainer sensors and the mobile app, and curate them into a data lakehouse solution on AWS so that Data Scientists can train the ML model.
+
 
 #### Using Spark, Python, [AWS Glue Studio](https://docs.aws.amazon.com/glue/latest/ug/what-is-glue-studio.html), [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) and [AWS Athena](https://aws.amazon.com/athena/), create Python scripts using [PySpark](https://spark.apache.org/docs/latest/api/python/index.html) and query [Glue Table](https://docs.aws.amazon.com/glue/latest/dg/tables-described.html) using SQL to build a lakehouse solution with landing-trusted-curated data lake zones in AWS that satisfies these requirements from the STEDI data scientists.
 
@@ -6,16 +15,7 @@
   <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/image/AWS_draw.png" width="100%">
 </div>
 
-# Introduction
-The STEDI Team has been hard at work developing a hardware STEDI Step Trainer that:
-
- - trains the user to do a STEDI balance exercise;
- - has sensors on the device that collect data to train a machine-learning algorithm to detect steps;
- - has a companion mobile app that collects customer data and interacts with the device sensors.
-
 STEDI has heard from millions of early adopters who are willing to purchase the STEDI Step Trainers and use them. Several customers have already received their Step Trainers, installed the mobile application, and begun using them together to test their balance. The **Step Trainer** is just a motion sensor that records the distance of the object detected. The app uses a mobile phone accelerometer to detect motion in the X, Y, and Z directions. The STEDI team wants to use the motion sensor data to train a machine learning model to **detect steps accurately in real-time**. **Privacy** will be a primary consideration in deciding what data can be used. Some of the early adopters have agreed to share their data for research purposes. Only these customers’ Step Trainer and **accelerometer data** should be used in the training data for the machine learning model.
-
-As a data engineer on the STEDI Step Trainer team, I'll extract the data produced by the STEDI Step Trainer sensors and the mobile app, and curate them into a data lakehouse solution on AWS so that Data Scientists can train the ML model.
 
 # Data source
 
