@@ -1,6 +1,6 @@
 # STEDI Human Balance Analytics- Data Lakehouse solution in AWS
 
-### Using Spark, Python, AWS Glue, AWS S3 and AWS Athena, create Python scripts using PySpark and query Glue Table using SQL to build a lakehouse solution with landing-trusted-curated data lake zones in AWS that satisfies these requirements from the STEDI data scientists.
+### Using Spark, Python, [AWS Glue Studio](https://docs.aws.amazon.com/glue/latest/ug/what-is-glue-studio.html), [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) and [AWS Athena](https://aws.amazon.com/athena/), create Python scripts using [PySpark](https://spark.apache.org/docs/latest/api/python/index.html) and query [Glue Table](https://docs.aws.amazon.com/glue/latest/dg/tables-described.html) using SQL to build a lakehouse solution with landing-trusted-curated data lake zones in AWS that satisfies these requirements from the STEDI data scientists.
 
 <div align="center">
   <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/image/AWS_draw.png" width="100%">
@@ -19,11 +19,11 @@ As a data engineer on the STEDI Step Trainer team, I'll extract the data produce
 
 # Data source
 
-STEDI has three JSON data sources to use from the Step Trainer:
+STEDI has **three JSON data** sources to use from the Step Trainer:
 
 ### 1. Customer Records (from fulfillment and the STEDI website)
 AWS S3 Bucket URI - `s3://cd0030bucket/customers/`
- 
+``` 
  - serialnumber
  - sharewithpublicasofdate
  - birthday
@@ -34,50 +34,43 @@ AWS S3 Bucket URI - `s3://cd0030bucket/customers/`
  - lastupdatedate
  - phone
  - sharewithfriendsasofdate
-
+```
 ### 2. Step Trainer Records (data from the motion sensor):
 AWS S3 Bucket URI - `s3://cd0030bucket/step_trainer/`
-
+```
  - sensorReadingTime
  - serialNumber
  - distanceFromObject
- 
+```
 ### 3. Accelerometer Records (from the mobile app):
 AWS S3 Bucket URI - `s3://cd0030bucket/accelerometer/`
-
+```
  - timeStamp
  - user
  - x
  - y
  - z
-
+```
 # Data Lakehouse Architecture
-
-[picture]
 
 ## Customers Data [JSON / Parquet]
  - Landing Zone: store raw customer records data in AWS S3 landing zone. 
-
  - Trusted Zone: only store the customer records who agreed to share their data for research purposes. 
-
  - Curated Zone: only store customers who have accelerometer data and have agreed to share their data for research. 
 
 ## Accelerometer Data [JSON / Parquet]
  - Landing Zone: store raw accelerometer data in AWS S3 landing zone.
  - Trusted Zone: only store accelerometer readings from customers who agreed to share their data for research purposes.
-
-
 ## Step Trainer Data [JSON / Parquet]
  - Landing Zone: store raw Step Trainer data in AWS S3 landing zone.
  - Trusted Zone: store the Step Trainer Records data for customers who have accelerometer data and have agreed to share their data for research (customers curated zone).
-
 ## Machine Learning Data [JSON / Parquet]
  - Curated Zone: aggregated table that has each of the Step Trainer Readings, and the associated accelerometer reading data for the same timestamp, but only for customers who have agreed to share their data.
  
 # AWS configuration (using AWS cloud shell)
  - Create S3 bucket
- - Configure S3 VPC Gateway Endpoint
- - Create Glue IAM Service role
+ - Configure [S3 VPC Gateway Endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html)
+ - Create [Glue IAM Service role](https://docs.aws.amazon.com/glue/latest/dg/set-up-iam.html)
  - Grant S3Access privileges to Glue
  - Give Glue access to data in special S3 buckets used for Glue configuration and other resources
  - Copy raw data from S3 data source into your S3 bucket. Ex.
@@ -95,10 +88,14 @@ To address this issue for the Data Science team:
  
 # AWS Glue Studio
 
-[Picture]
+<div align="center">
+  <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/image/Glue.png" width="100%">
+</div>
 
 # AWS Athena
 
-[Picture]
+<div align="center">
+  <img src="https://github.com/Ting-DS/Data-Lakehouse-Spark-AWS/blob/main/image/Athena.png" width="100%">
+</div>
 
 
