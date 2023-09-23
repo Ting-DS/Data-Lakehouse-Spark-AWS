@@ -85,6 +85,39 @@ To address this issue for the Data Science team:
  - Cleaning Customer Data: Cleaning Customer data from the Trusted Zone, including only those customers who have accelerometer data and have agreed to share their data for research. This cleaning process will create a Glue table named "customers_curated."
 
  - Creating Two Glue Studio Jobs: These two jobs aim to read the Step Trainer IoT data stream, populate a Trusted Zone Glue table named "step_trainer_trusted" containing accelerometer data and STEDI Step Trainer records data from customers who have agreed to share their data. Additionally, an aggregated table will be created that associates each Step Trainer Reading with the corresponding timestamp's accelerometer reading data, but only for customers who have consented to share their data. This aggregated table will be named "machine_learning_curated."
+
+# AWS Glue Catalog & Glue Table DDL
+```
+CREATE EXTERNAL TABLE `machine_learning_curated`(
+  `serialnumber` string COMMENT 'from deserializer', 
+  `sharewithresearchasofdate` bigint COMMENT 'from deserializer', 
+  `registrationdate` bigint COMMENT 'from deserializer', 
+  `customername` string COMMENT 'from deserializer', 
+  `sensorreadingtime` bigint COMMENT 'from deserializer', 
+  `distancefromobject` int COMMENT 'from deserializer', 
+  `lastupdatedate` bigint COMMENT 'from deserializer', 
+  `timestamp` bigint COMMENT 'from deserializer', 
+  `user` string COMMENT 'from deserializer', 
+  `x` double COMMENT 'from deserializer', 
+  `y` double COMMENT 'from deserializer', 
+  `z` double COMMENT 'from deserializer')
+ROW FORMAT SERDE 
+  'org.openx.data.jsonserde.JsonSerDe' 
+WITH SERDEPROPERTIES ( 
+  'case.insensitive'='TRUE', 
+  'dots.in.keys'='FALSE', 
+  'ignore.malformed.json'='FALSE', 
+  'mapping'='TRUE') 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  's3://stedi-lake-house/ml'
+TBLPROPERTIES (
+  'classification'='json', 
+  'transient_lastDdlTime'='1695438973')
+```
  
 # AWS Glue Studio
 
