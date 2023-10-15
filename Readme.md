@@ -138,7 +138,7 @@ TBLPROPERTIES (
 # Reference:
 
  - [Data Engineering with AWS](https://www.amazon.com/Data-Engineering-AWS-Gareth-Eagar/dp/1800560419)
- - [Data Lakehouse]()https://aws.amazon.com/blogs/architecture/use-a-reusable-etl-framework-in-your-aws-lake-house-architecture/
+ - [Data Lakehouse](https://aws.amazon.com/blogs/architecture/use-a-reusable-etl-framework-in-your-aws-lake-house-architecture/)
  - [AWS Glue Studio](https://docs.aws.amazon.com/glue/latest/ug/what-is-glue-studio.html)
  - [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
  - [AWS Athena](https://aws.amazon.com/athena/)
